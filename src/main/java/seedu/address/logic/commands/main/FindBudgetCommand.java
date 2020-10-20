@@ -34,7 +34,7 @@ public class FindBudgetCommand extends Command {
     @Override
     public CommandResult execute(Model model) {
         requireNonNull(model);
-        String searchTerm = name.value;
+        String searchTerm = name.getName();
         try {
             model.updateFilteredRenderableList(renderable -> renderable.contains(searchTerm));
         } catch (CommandException e) {

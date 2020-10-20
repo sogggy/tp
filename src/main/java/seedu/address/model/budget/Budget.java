@@ -39,11 +39,11 @@ public class Budget implements Renderable {
     }
 
     public String getName() {
-        return name.value;
+        return name.getName();
     }
 
     public String getThreshold() {
-        return threshold.orElse(new Threshold("")).value;
+        return threshold.orElse(new Threshold("")).getThreshold();
     }
 
     public List<Expenditure> getExpenditures() {
@@ -65,7 +65,7 @@ public class Budget implements Renderable {
 
     @Override
     public boolean contains(String str) {
-        String nameLowerCase = name.value.toLowerCase();
+        String nameLowerCase = name.getName().toLowerCase();
         return nameLowerCase.contains(str.toLowerCase());
     }
 }
